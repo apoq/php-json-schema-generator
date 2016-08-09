@@ -86,7 +86,7 @@ class JSONStringParser extends Parser
         $prop->setType($type)
             ->setName($name)
             ->setKey($name)    // due to the limited content ability of the basic json string
-            ->setRequired($requiredDefault);
+            ->setRequired(in_array($name, $this->getConfigSchemaRequiredFields()));
             
         if($baseUrl) 
             $prop->setId($baseUrl . '/' . $name);
